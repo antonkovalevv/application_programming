@@ -1,25 +1,18 @@
 import re
 
 
-def find_multiples_of_three(input_text):
-    binary = re.findall(r'\b[01]+\b', input_text)
-   
+def multiplicity_3(binary_str):
 
-    for binary_str in binary:
+    pattern = re.findall(r'^(1(01*0)*1|0)+$',binary_str)
 
-        decimal = int(binary_str, 2)
-        if decimal % 3 == 0:
-            print(binary_str)
+    return bool(pattern)
 
 
 # Пример использования
-text = """
-101
-110
-111
-1001
-1010
-1100
-"""
-print("Строки с двоичной записью числа, кратного 3:")
-find_multiples_of_three(text)
+binary_numbers_str = "10 11 110 1101 1010 1001 1111 10101 1100 010110 111001 101011 001100 111100 010101 110011 100110 000111 011010"
+binary_numbers = binary_numbers_str.split()
+
+for binary_number in binary_numbers:
+    if multiplicity_3(binary_number):
+        print(f"{binary_number} делится на 3 в двоичной системе.")
+
