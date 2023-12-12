@@ -1,4 +1,4 @@
-#Output of all binary numbers
+#Output of all decimal numbers
 import re
 
 
@@ -7,7 +7,8 @@ def find_multiples_of_three(input_text):
     matches = binary.findall(input_text)
 
     for binary_str in matches:
-        print(binary_str)
+        decimal = int(binary_str, 2)
+        print(decimal)
 
 # Пример использования
 text = """
