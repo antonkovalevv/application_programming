@@ -2,10 +2,10 @@ import re
 
 
 def find_multiples_of_three(input_text):
-    binary = re.compile(r'\b[01]+\b')
-    matches = binary.findall(input_text)
+    binary = re.findall(r'\b[01]+\b', input_text)
+   
 
-    for binary_str in matches:
+    for binary_str in binary:
 
         decimal = int(binary_str, 2)
         if decimal % 3 == 0:
