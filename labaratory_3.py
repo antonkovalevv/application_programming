@@ -3,7 +3,7 @@ import re
 
 def find_multiples_of_three(input_text):
     binary = re.findall(r'\b[01]+\b', input_text)
-   
+
 
     for binary_str in binary:
 
